@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character description</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/character-description.css" />
+    <link rel="stylesheet" href="./css/spinner.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        <img class="logo" src="./images/logo.png" alt="logo" />
+        <button class="button themes" onclick="changeTheme()">
+          <span class="sun material material-fill"> brightness_1 </span>
+          <span class="moon material material-fill"> brightness_2 </span>
+        </button>
+        <a class="link link-home" href="./index.html" data-lang-key="home"
+          >Home</a
+        >
+        <div class="flex-grow"></div>
+        <div class="select">
+          <label class="material label-language-select" for="language-select"
+            >language</label
+          >
+          <select
+            class="select__input input-language-select"
+            id="language-select"
+            onchange="selectLanguage(event)"
+          >
+            <option>English</option>
+            <option>Русский</option>
+          </select>
+          <span class="material material-fill icon-select-down">
+            arrow_drop_down
+          </span>
+        </div>
+      </div>
+      <div class="main">
+        <div class="character temp-height">
+          <div class="spinner-container">
+            <div class="spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/locale-keys.js"></script>
+    <script src="./js/change-theme.js"></script>
+    <script src="./js/en.js"></script>
+    <script src="./js/ru.js"></script>
+    <script src="./js/change-lang.js"></script>
+    <script src="./js/character-description.js"></script>
+  </body>
+</html>

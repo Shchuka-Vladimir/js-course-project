@@ -1,0 +1,20 @@
+.character {
+  display: flex;
+  gap: 100px;
+}
+.item-value {
+  text-transform: capitalize;
+}
+.item-value-films {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.link-film {
+  color: var(--text-color);
+  padding-bottom: 2px;
+  transition: color 0.2s ease-in;
+}
+.link-film:hover {
+  color: var(--primary-color);
+}

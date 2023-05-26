@@ -9,7 +9,7 @@ function restoreLocaleKeys() {
       favorites: [],
       statusButtonFavorites: false,
       darkTheme: false,
-      lang: "English",
+      lang: "en",
     }
   );
 }

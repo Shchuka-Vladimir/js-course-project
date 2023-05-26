@@ -23,39 +23,57 @@
     <div class="page">
       <div class="header">
         <img class="logo" src="./images/logo.png" alt="logo" />
-        <button class="button themes" onclick="changeTheme()">
-          <span class="sun material material-fill"> brightness_1 </span>
-          <span class="moon material material-fill"> brightness_2 </span>
-        </button>
-        <a class="link link-home" href="./index.html" data-lang-key="home"
-          >Home</a
-        >
-        <div class="flex-grow"></div>
-        <a
-          href="./index.html?page=film-description"
-          class="link button button-favorites hide"
-        >
-          <span class="material button__icon-favorites">star</span>
-          <div class="button-favorites-content">
-            <span data-lang-key="favorites">Favorites</span>
-            <span class="quantity-favorites-films">(0)</span>
+        <div class="header__menu">
+          <button class="button themes" onclick="changeTheme()">
+            <span class="sun material material-fill"> brightness_1 </span>
+            <span class="moon material material-fill"> brightness_2 </span>
+          </button>
+          <a class="link link-home" href="./index.html" data-lang-key="home"
+            >Home</a
+          >
+          <div class="flex-grow"></div>
+          <a
+            href="./index.html?page=film-description"
+            class="link button button-favorites hide"
+          >
+            <span class="material button__icon-favorites">star</span>
+            <div class="button-favorites-content">
+              <span class="favorites" data-lang-key="favorites">Favorites</span>
+              <span class="quantity-favorites-films">(0)</span>
+            </div>
+          </a>
+          <div class="select show">
+            <label class="material label-language-select" for="language-select"
+              >language</label
+            >
+            <select
+              class="select__input input-language-select"
+              id="language-select"
+              onchange="selectLanguage(event)"
+            >
+              <option>English</option>
+              <option>Русский</option>
+            </select>
+            <span class="material material-fill icon-select-down">
+              arrow_drop_down
+            </span>
           </div>
-        </a>
-        <div class="select">
-          <label class="material label-language-select" for="language-select"
-            >language</label
-          >
-          <select
-            class="select__input input-language-select"
-            id="language-select"
-            onchange="selectLanguage(event)"
-          >
-            <option>English</option>
-            <option>Русский</option>
-          </select>
-          <span class="material material-fill icon-select-down">
-            arrow_drop_down
-          </span>
+          <div class="select hidden">
+            <select
+              class="select__input input-language-select-mini"
+              id="language-select"
+              onchange="selectLanguage(event, true)"
+            >
+              <option>ENG</option>
+              <option>РУС</option>
+            </select>
+            <label class="material label-language-select" for="language-select"
+              >language</label
+            >
+            <span class="material material-fill icon-select-down">
+              arrow_drop_down
+            </span>
+          </div>
         </div>
       </div>
       <div class="main">

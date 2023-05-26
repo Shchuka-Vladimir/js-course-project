@@ -21,7 +21,7 @@ function saveFavorites(event) {
     removeFilm(target);
   }
   storeLocaleKeys();
-  quantityFavoritesFilms.textContent = `(${localeKeys.favorites.length})`;
+  quantityFavoritesFilms.textContent = `${localeKeys.favorites.length}`;
 }
 
 function removeFilm(target) {

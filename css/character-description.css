@@ -1,6 +1,6 @@
 .character {
   display: flex;
-  gap: 100px;
+  gap: 8%;
 }
 .item-value {
   text-transform: capitalize;
@@ -17,4 +17,39 @@
 }
 .link-film:hover {
   color: var(--primary-color);
+}
+
+@media (max-width: 960px) {
+  .list {
+    grid-template-columns: 90px 1fr;
+  }
+}
+@media (max-width: 860px) {
+  .character {
+    gap: 2%;
+  }
+}
+@media (max-width: 740px) {
+  .poster {
+    width: 300px;
+  }
+}
+@media (max-width: 590px) {
+  .character {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .poster {
+    width: 100%;
+    height: 500px;
+  }
+  .content {
+    margin-bottom: 20px;
+  }
+  .list {
+    font-size: 11px;
+  }
+  .item-label {
+    font-size: 12px;
+  }
 }

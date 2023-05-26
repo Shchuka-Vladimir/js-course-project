@@ -3,7 +3,7 @@
 }
 .film {
   display: flex;
-  gap: 40px;
+  gap: 3%;
 }
 .description {
   line-height: 1.5;
@@ -12,7 +12,8 @@
 .characters {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
-  gap: 20px;
+  row-gap: 20px;
+  column-gap: 2%;
   justify-content: center;
 }
 .character-title {
@@ -47,7 +48,7 @@ a.character:hover {
 .load-more {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 20px 0;
 }
 .button.button-load-more {
   padding: 8px 16px;
@@ -65,4 +66,59 @@ a.character:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media (max-width: 1000px) {
+  .characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    row-gap: 20px;
+    column-gap: 2%;
+    justify-content: center;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .character-title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .description {
+    font-size: 13px;
+  }
+}
+@media (max-width: 740px) {
+  .description {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 690px) {
+  .characters {
+    grid-template-columns: repeat(auto-fit, 140px);
+  }
+}
+@media (max-width: 590px) {
+  .film {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .content {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 560px) {
+  .film {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 490px) {
+  .characters {
+    grid-template-columns: repeat(auto-fit, 160px);
+  }
 }

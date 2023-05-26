@@ -285,9 +285,18 @@ function getPhraseSearch(event) {
   const target = event.target;
   phrase = target.value.toLowerCase();
   renderFilmsWithLang();
+  hideTimeBlock(target);
 }
 
 async function renderFilmsWithLang() {
   await renderFilms();
   changeLang(localeKeys.lang);
+}
+
+function hideTimeBlock(target) {
+  const timeBlock = document.querySelector(".time-block");
+  timeBlock.classList.add("hidden");
+  if (!target.value) {
+    timeBlock.classList.remove("hidden");
+  }
 }

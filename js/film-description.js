@@ -142,18 +142,18 @@ function renderButtonLoadMore(length, more) {
     remainder === length % numberOfCharactersToLoad
       ? remainder
       : numberOfCharactersToLoad;
-  if (more) {
-    loadMore.scrollIntoView();
-  }
-  if (remainder <= 0) {
-    loadMore.classList.add("hide");
-  }
   loadMore.innerHTML = `
   <button class="button button-load-more" onclick="loadMore(true)">
       <span data-lang-key="showMore">SHOW MORE</span>
       <span>&nbsp;(${nextQuantity})</span>
     </button>
   `;
+  if (more) {
+    loadMore.scrollIntoView({ behavior: "smooth" });
+  }
+  if (remainder <= 0) {
+    loadMore.classList.add("hide");
+  }
 }
 
 function generateCharacterSkeleton() {
@@ -178,5 +178,5 @@ function saveFavorites(event) {
     );
   }
   storeLocaleKeys();
-  quantityFavoritesFilms.textContent = `(${localeKeys.favorites.length})`;
+  quantityFavoritesFilms.textContent = `${localeKeys.favorites.length}`;
 }

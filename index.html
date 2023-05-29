@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>films</title>
+    <title>Star Wars</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +27,7 @@
             <span class="sun material material-fill"> brightness_1 </span>
             <span class="moon material material-fill"> brightness_2 </span>
           </button>
-          <form onsubmit="formEvent(event)">
+          <form onsubmit="formEvent(event)" name="form">
             <div class="search show">
               <button class="button material search__button" type="submit">
                 search
@@ -41,15 +41,15 @@
               />
             </div>
           </form>
-          <form onsubmit="formEvent(event)">
-            <div class="search search-mini hidden">
+          <form onsubmit="formEvent(event)" name="form-mobile">
+            <div class="search search-mobile hidden">
               <button class="button material search__button" type="submit">
                 search
               </button>
               <input
                 class="search__input"
                 type="search"
-                name="search-mini"
+                name="search-mobile"
                 oninput="getPhraseSearch(event)"
                 placeholder="Search"
               />
@@ -81,14 +81,16 @@
           </div>
           <div class="select hidden">
             <select
-              class="select__input input-language-select-mini"
-              id="language-select"
-              onchange="selectLanguage(event, true)"
+              class="select__input input-language-select-mobile"
+              id="language-select-mobile"
+              onchange="selectLanguage(event)"
             >
               <option>ENG</option>
               <option>РУС</option>
             </select>
-            <label class="material label-language-select" for="language-select"
+            <label
+              class="material label-language-select"
+              for="language-select-mobile"
               >language</label
             >
             <span class="material material-fill icon-select-down">
@@ -112,11 +114,11 @@
                 id="sort-select"
                 onchange="selectSort(event)"
               >
-                <option value="Episode number" data-lang-key="episodeNumber">
+                <option value="Episode Number" data-lang-key="episodeNumber">
                   Episode Number
                 </option>
-                <option value="Release date" data-lang-key="releaseDate">
-                  Release date
+                <option value="Release Date" data-lang-key="releaseDate">
+                  Release Date
                 </option>
               </select>
               <button

@@ -6,12 +6,14 @@
   --color-time: #fefefe;
   --background-color-hover: #eaeaea;
   --padding-page: 1%;
+  --disable-color: #dfdfdf;
 }
 .theme-dark {
   --background-color: black;
   --text-color: white;
   --border-color: #585858;
   --background-color-hover: #1f1d1d;
+  --disable-color: #202020;
 }
 * {
   box-sizing: border-box;
@@ -165,7 +167,7 @@ body.theme-dark .moon {
 }
 .link-home {
   color: var(--primary-color);
-  font-size: 30px;
+  font-size: 20px;
   transition: color 0.2s ease-in;
 }
 .link-home:hover {
@@ -214,14 +216,18 @@ body.theme-dark .moon {
   font-size: 12px;
   width: 10px;
 }
-.input-language-select-mini {
+.input-language-select-mobile {
   width: 50px;
   font-size: 13px;
+  color: transparent;
 }
-.input-language-select-mini ~ .icon-select-down {
+.input-language-select-mobile option {
+  color: var(--primary-color);
+}
+.input-language-select-mobile ~ .icon-select-down {
   right: -2px;
 }
-.input-language-select-mini + .label-language-select {
+.input-language-select-mobile + .label-language-select {
   left: 2px;
 }
 .hidden {
@@ -274,7 +280,7 @@ body.theme-dark .moon {
     font-size: 14px;
   }
   .link-home {
-    font-size: 25px;
+    font-size: 16px;
   }
 }
 @media (max-width: 910px) {

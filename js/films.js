@@ -63,11 +63,11 @@ function generateTile(film) {
       <div class="tile__film-content">
         <div>
           <div class="tile__film-title">
-            <span data-lang-key="starWars">Star Wars: </span>
-            <span data-lang-key="titleFilm${film.id}">${film.title}</span>
+            <span>Star Wars: </span>
+            <span>${film.title}</span>
           </div>
           <div class="tile__film-data">
-            <span data-lang-key="episode">Episode</span>
+            <span>Episode</span>
             <span>${film.episode_id},</span>
             <span>${film.release_date.slice(0, 4)}</span>
           </div>
@@ -167,11 +167,11 @@ function generateItem(film) {
     }.json"
   >
     <div class="item__film-title">
-      <span data-lang-key="starWars">Star Wars: </span>
-      <span data-lang-key="titleFilm${film.id}"></span>
+      <span>Star Wars: </span>
+      <span>${film.title}</span>
     </div>
     <div>
-      <span data-lang-key="episode">Episode</span>
+      <span>Episode</span>
       <span>${film.episode_id}</span>
     </div>
     <div class="item__film-date">${film.release_date.slice(0, 4)}</div>
@@ -211,7 +211,7 @@ function selectSort(event) {
 }
 
 function sortFilmsBy(films, direction) {
-  if (localeKeys.sortBy === "Episode number") {
+  if (localeKeys.sortBy === "Episode Number") {
     return films
       .slice()
       .sort(

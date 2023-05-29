@@ -85,12 +85,12 @@
   font-size: 31px;
 }
 .disable {
-  color: var(--border-color);
+  color: var(--disable-color);
   cursor: default;
   transition: color 0.2s ease-in;
 }
 .disable:hover {
-  color: var(--border-color);
+  color: var(--disable-color);
   background-color: var(--background-color);
 }
 .films {
@@ -142,7 +142,7 @@ a.tile:hover {
 }
 .item {
   display: flex;
-  padding: 20px;
+  padding: 20px 20px 0;
   border-top: 1px solid var(--background-color-hover);
   transition: border-color 0.2s ease-in;
 }
@@ -170,7 +170,7 @@ a.tile:hover {
 }
 .item__film-date {
   margin-top: 5px;
-  font-size: 14px;
+  font-size: 13px;
   color: var(--primary-color);
 }
 .item__skeleton-title {
@@ -233,16 +233,16 @@ a.tile:hover {
   padding-left: 10%;
   white-space: nowrap;
 }
-.search-mini .search__input {
+.search-mobile .search__input {
   width: 180px;
   height: 30px;
   padding-left: 30px;
 }
-.search-mini .search__button {
+.search-mobile .search__button {
   left: 8px;
 }
 .time-block.hidden,
-.search-mini.hidden {
+.search-mobile.hidden {
   display: none;
 }
 
@@ -265,6 +265,19 @@ a.tile:hover {
   .tile__film-data {
     font-size: 13px;
   }
+  a.tile:hover {
+    transform: none;
+  }
+  .item.film:hover {
+    background-color: transparent;
+    border-radius: 0;
+  }
+  .item.film:hover + .item.film {
+    border-color: var(--background-color-hover);
+  }
+  .item__film-date {
+    font-size: 12px;
+  }
 }
 @media (max-width: 910px) {
   .time {
@@ -278,6 +291,9 @@ a.tile:hover {
   }
   .time-poster {
     aspect-ratio: 3/1;
+  }
+  .button-sort {
+    padding: 2px;
   }
 }
 @media (max-width: 750px) {

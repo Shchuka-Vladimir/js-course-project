@@ -4,7 +4,7 @@ function restoreLocaleKeys() {
   return (
     JSON.parse(localStorage.getItem("localeKeys")) || {
       view: "tiles",
-      sortBy: "Episode number",
+      sortBy: "Episode Number",
       sortDirection: "down",
       favorites: [],
       statusButtonFavorites: false,

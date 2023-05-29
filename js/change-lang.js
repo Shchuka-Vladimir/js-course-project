@@ -1,6 +1,3 @@
-const selectLanguageMini = document.querySelector(
-  ".input-language-select-mini"
-);
 const DICTIONARIES = {
   ru: RU,
   en: EN,
@@ -18,8 +15,11 @@ function selectLanguage(event) {
 
 function instalValueInputSelectLanguage() {
   const selectLanguage = document.querySelector(".input-language-select");
+  const selectLanguageMobile = document.querySelector(
+    ".input-language-select-mobile"
+  );
   selectLanguage.value = localeKeys.lang === "en" ? "English" : "Русский";
-  selectLanguageMini.value = "";
+  selectLanguageMobile.value = localeKeys.lang === "en" ? "ENG" : "РУС";
 }
 
 function changeLang(lang) {
@@ -29,21 +29,23 @@ function changeLang(lang) {
     const translateKey = element.dataset.langKey;
     element.textContent = dictionary[translateKey];
   });
-  selectLanguageMini.value = "";
+  instalValueInputSelectLanguage();
   changePlaceholder();
 }
 
 function changePlaceholder() {
   const searchInput = document.querySelector("input[name='search']");
-  const searchInputMini = document.querySelector("input[name='search-mini']");
+  const searchInputMobile = document.querySelector(
+    "input[name='search-mobile']"
+  );
   if (!searchInput) {
     return;
   }
   if (localeKeys.lang === "ru") {
     searchInput.placeholder = "Поиск по названию, эпизоду и году";
-    searchInputMini.placeholder = "Поиск";
+    searchInputMobile.placeholder = "Поиск";
   } else {
     searchInput.placeholder = "Search By Title, Episode and Year";
-    searchInputMini.placeholder = "Search";
+    searchInputMobile.placeholder = "Search";
   }
 }

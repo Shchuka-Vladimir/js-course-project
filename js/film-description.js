@@ -10,7 +10,6 @@ let film;
 start();
 
 async function start() {
-  const spinnerContainer = document.querySelector(".spinner-container");
   instalValueInputSelectLanguage();
   await renderFilm();
   loadMore();
@@ -48,10 +47,10 @@ function generateFilm(film) {
   />
   <div class="content">
     <h1 class="title">
-      <span data-lang-key="starWars"></span>
-      <span data-lang-key="episode"></span>
+      <span>Star Wars: </span>
+      <span>Episode</span>
       <span>${film.episode_id} - </span>
-      <span data-lang-key="titleFilm${film.id}"></span>
+      <span>${film.title}</span>
     </h1>
     <div class="subtitle-container">
       <h3 class="subtitle" data-lang-key="movieInfo">Movie info</h3>
@@ -66,7 +65,7 @@ function generateFilm(film) {
     <div
       class="description"
       data-lang-key="descriptionFilm${film.id}"
-    ></div>
+    >${film.opening_crawl}</div>
     <div class="list">
       <div class="item-label" data-lang-key="productionYear">Production year</div>
       <div>${film.release_date.slice(0, 4)}</div>
@@ -75,9 +74,9 @@ function generateFilm(film) {
       <div class="item-label" data-lang-key="releaseDate">Release date</div>
       <div>${film.release_date}</div>
       <div class="item-label" data-lang-key="director">Director</div>
-      <div data-lang-key="${film.director}"></div>
+      <div>${film.director}</div>
       <div class="item-label" data-lang-key="producer">Produce</div>
-      <div data-lang-key="${film.producer}"></div>
+      <div>${film.producer}</div>
     </div>
   </div>
 </div>

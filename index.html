@@ -64,35 +64,37 @@
             </div>
           </button>
           <div class="select show">
-            <label class="material label-language-select" for="language-select"
-              >language</label
-            >
-            <select
-              class="select__input input-language-select"
-              id="language-select"
-              onchange="selectLanguage(event)"
-            >
-              <option>English</option>
-              <option>Русский</option>
-            </select>
+            <span class="material language">language</span>
+            <span
+              class="select-header select-header-language"
+              onclick="toggleOption(event)"
+            ></span>
+            <ul class="dropdown dropdown-lang dropdown--height">
+              <li class="option" onclick="selectLanguage(event, 'lang')">
+                English
+              </li>
+              <li class="option" onclick="selectLanguage(event, 'lang')">
+                Русский
+              </li>
+            </ul>
             <span class="material material-fill icon-select-down">
               arrow_drop_down
             </span>
           </div>
           <div class="select hidden">
-            <select
-              class="select__input input-language-select-mobile"
-              id="language-select-mobile"
-              onchange="selectLanguage(event)"
-            >
-              <option>ENG</option>
-              <option>РУС</option>
-            </select>
-            <label
-              class="material label-language-select"
-              for="language-select-mobile"
-              >language</label
-            >
+            <span
+              class="select-header select-header-language-mobile"
+              onclick="toggleOption(event)"
+            ></span>
+            <ul class="dropdown dropdown-lang-mobile dropdown--height">
+              <li class="option" onclick="selectLanguage(event, 'lang-mobile')">
+                ENG
+              </li>
+              <li class="option" onclick="selectLanguage(event, 'lang-mobile')">
+                РУС
+              </li>
+            </ul>
+            <span class="material language">language</span>
             <span class="material material-fill icon-select-down">
               arrow_drop_down
             </span>
@@ -102,25 +104,28 @@
       <div class="main">
         <div class="main__menu">
           <div class="sort">
+            <span class="sort-by" data-lang-key="sortBy">Sort by</span>
             <div class="select">
-              <label
-                class="label-sort-select"
-                for="sort-select"
-                data-lang-key="sortBy"
-                >Sort by</label
-              >
-              <select
-                class="select__input input-sort-select"
-                id="sort-select"
-                onchange="selectSort(event)"
-              >
-                <option value="Episode Number" data-lang-key="episodeNumber">
+              <span
+                class="select-header select-header-sort"
+                onclick="toggleOption(event)"
+              ></span>
+              <ul class="dropdown dropdown-sort dropdown--height">
+                <li
+                  class="option"
+                  data-lang-key="episodeNumber"
+                  onclick="selectSort(event)"
+                >
                   Episode Number
-                </option>
-                <option value="Release Date" data-lang-key="releaseDate">
+                </li>
+                <li
+                  class="option"
+                  data-lang-key="releaseDate"
+                  onclick="selectSort(event)"
+                >
                   Release Date
-                </option>
-              </select>
+                </li>
+              </ul>
               <button
                 class="button material button-sort button-down"
                 data-direction="down"
@@ -160,12 +165,17 @@
         </div>
         <div class="films"></div>
       </div>
+      <div
+        class="block-dropdown-close hidden"
+        onclick="closeDropdown(event)"
+      ></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js"></script>
     <script src="./js/locale-keys.js"></script>
     <script src="./js/change-theme.js"></script>
     <script src="./js/en.js"></script>
     <script src="./js/ru.js"></script>
+    <script src="./js/toggle-option.js"></script>
     <script src="./js/time-block.js" defer></script>
     <script src="./js/change-lang.js"></script>
     <script src="./js/pouring-icons-favorites.js"></script>

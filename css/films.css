@@ -44,13 +44,13 @@
   font-size: 14px;
   color: var(--primary-color);
 }
-.label-sort-select {
+.sort-by {
   min-width: 110px;
   text-align: right;
 }
-.input-sort-select {
+.select-header-sort {
   width: 210px;
-  margin-left: 15px;
+  justify-content: left;
 }
 .button-sort {
   position: absolute;
@@ -94,8 +94,7 @@
   background-color: var(--background-color);
 }
 .films {
-  margin-top: 30px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .tiles {
   display: grid;
@@ -329,10 +328,10 @@ a.tile:hover {
   }
 }
 @media (max-width: 480px) {
-  .label-sort-select {
+  .sort-by {
     display: none;
   }
-  .input-sort-select {
+  .select-header-sort {
     margin-left: 0;
   }
   .time-poster {

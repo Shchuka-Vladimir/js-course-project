@@ -33,33 +33,37 @@
           >
           <div class="flex-grow"></div>
           <div class="select show">
-            <label class="material label-language-select" for="language-select"
-              >language</label
-            >
-            <select
-              class="select__input input-language-select"
-              id="language-select"
-              onchange="selectLanguage(event)"
-            >
-              <option>English</option>
-              <option>Русский</option>
-            </select>
+            <span class="material language">language</span>
+            <span
+              class="select-header select-header-language"
+              onclick="toggleOption(event)"
+            ></span>
+            <ul class="dropdown dropdown-lang dropdown--height">
+              <li class="option" onclick="selectLanguage(event, 'lang')">
+                English
+              </li>
+              <li class="option" onclick="selectLanguage(event, 'lang')">
+                Русский
+              </li>
+            </ul>
             <span class="material material-fill icon-select-down">
               arrow_drop_down
             </span>
           </div>
           <div class="select hidden">
-            <select
-              class="select__input input-language-select-mobile"
-              id="language-select-mobile"
-              onchange="selectLanguage(event, true)"
-            >
-              <option>ENG</option>
-              <option>РУС</option>
-            </select>
-            <label class="material label-language-select" for="language-select"
-              >language</label
-            >
+            <span
+              class="select-header select-header-language-mobile"
+              onclick="toggleOption(event)"
+            ></span>
+            <ul class="dropdown dropdown-lang-mobile dropdown--height">
+              <li class="option" onclick="selectLanguage(event, 'lang-mobile')">
+                ENG
+              </li>
+              <li class="option" onclick="selectLanguage(event, 'lang-mobile')">
+                РУС
+              </li>
+            </ul>
+            <span class="material language">language</span>
             <span class="material material-fill icon-select-down">
               arrow_drop_down
             </span>
@@ -82,11 +86,16 @@
           </div>
         </div>
       </div>
+      <div
+        class="block-dropdown-close hidden"
+        onclick="closeDropdown(event)"
+      ></div>
     </div>
     <script src="./js/locale-keys.js"></script>
     <script src="./js/change-theme.js"></script>
     <script src="./js/en.js"></script>
     <script src="./js/ru.js"></script>
+    <script src="./js/toggle-option.js"></script>
     <script src="./js/change-lang.js"></script>
     <script src="./js/character-description.js"></script>
   </body>

@@ -2,7 +2,6 @@ const quantityElementSkeleton =
   localeKeys.favorites.length && localeKeys.statusButtonFavorites
     ? localeKeys.favorites.length
     : 7;
-
 let phrase;
 
 start();
@@ -17,7 +16,7 @@ function start() {
   }
   changeLang(localeKeys.lang);
   addElementDisable();
-  instalValueInputSelectSort();
+  instalContentSelectHeaderSort();
   renderFilmsWithLang();
 }
 
@@ -204,14 +203,24 @@ function renderSkeletonItem(element) {
 }
 
 function selectSort(event) {
+  const dropdown = document.querySelector(".dropdown-sort");
   const target = event.target;
-  localeKeys.sortBy = target.value;
+  if (target.textContent === localeKeys.sortBy) {
+    return;
+  }
+  localeKeys.sortBy = target.textContent;
   storeLocaleKeys();
+  instalContentSelectHeaderSort();
   renderFilmsWithLang();
+  dropdown.classList.add("dropdown--height");
+  blockDropdownClose.classList.add("hidden");
 }
 
 function sortFilmsBy(films, direction) {
-  if (localeKeys.sortBy === "Episode Number") {
+  if (
+    localeKeys.sortBy === "Episode Number" ||
+    localeKeys.sortBy === "Номер эпизода"
+  ) {
     return films
       .slice()
       .sort(
@@ -227,11 +236,6 @@ function sortFilmsBy(films, direction) {
           direction * film2.release_date.slice(0, 4)
       );
   }
-}
-
-function instalValueInputSelectSort() {
-  const elementSelectSort = document.querySelector(".input-sort-select");
-  elementSelectSort.value = localeKeys.sortBy;
 }
 
 function changeDirection(event, direction) {

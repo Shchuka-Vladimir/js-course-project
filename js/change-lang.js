@@ -5,21 +5,32 @@ const DICTIONARIES = {
 
 instalValueInputSelectLanguage();
 
-function selectLanguage(event) {
+function selectLanguage(event, type) {
+  const dropdown = document.querySelector(`.dropdown-${type}`);
   const target = event.target;
   localeKeys.lang =
-    target.value === "English" || target.value === "ENG" ? "en" : "ru";
+    target.textContent.trim() === "English" ||
+    target.textContent.trim() === "ENG"
+      ? "en"
+      : "ru";
   storeLocaleKeys();
+  changeContentSelectHeaderSort();
   changeLang(localeKeys.lang);
+  dropdown.classList.add("dropdown--height");
+  blockDropdownClose.classList.add("hidden");
 }
 
 function instalValueInputSelectLanguage() {
-  const selectLanguage = document.querySelector(".input-language-select");
-  const selectLanguageMobile = document.querySelector(
-    ".input-language-select-mobile"
+  const selectHeaderLanguage = document.querySelector(
+    ".select-header-language"
   );
-  selectLanguage.value = localeKeys.lang === "en" ? "English" : "Русский";
-  selectLanguageMobile.value = localeKeys.lang === "en" ? "ENG" : "РУС";
+  const selectHeaderLanguageMobile = document.querySelector(
+    ".select-header-language-mobile"
+  );
+  selectHeaderLanguage.textContent =
+    localeKeys.lang === "en" ? "English" : "Русский";
+  selectHeaderLanguageMobile.textContent =
+    localeKeys.lang === "en" ? "ENG" : "РУС";
 }
 
 function changeLang(lang) {
@@ -48,4 +59,24 @@ function changePlaceholder() {
     searchInput.placeholder = "Search By Title, Episode and Year";
     searchInputMobile.placeholder = "Search";
   }
+}
+
+function changeContentSelectHeaderSort() {
+  if (localeKeys.lang === "ru") {
+    localeKeys.sortBy =
+      localeKeys.sortBy === "Episode Number"
+        ? "Номер эпизода"
+        : "Дата премьеры";
+  } else {
+    localeKeys.sortBy =
+      localeKeys.sortBy === "Номер эпизода" ? "Episode Number" : "Release Date";
+  }
+  storeLocaleKeys();
+  instalContentSelectHeaderSort();
+}
+
+function instalContentSelectHeaderSort() {
+  const selectHeaderSort = document.querySelector(".select-header-sort");
+  if (!selectHeaderSort) return;
+  selectHeaderSort.textContent = localeKeys.sortBy;
 }
